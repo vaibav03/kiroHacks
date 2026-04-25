@@ -42,7 +42,7 @@ export function LegacyCoverModal({
   };
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareText = `I just completed "${lessonTitle}" on HistorAI! Check out my Legacy Cover.`;
+  const shareText = `I just completed "${lessonTitle}" on Historia! Check out my Legacy Cover.`;
 
   const handleShare = (platform: 'facebook' | 'twitter' | 'instagram') => {
     const urls: Record<string, string> = {
@@ -98,7 +98,7 @@ export function LegacyCoverModal({
           <div className={styles.coverFooter}>
             <span className={styles.authorLabel}>Written & Solved by</span>
             <span className={styles.authorName}>{studentName || 'Student'}</span>
-            <span className={styles.poweredBy}>HistorAI · historai.app</span>
+            <span className={styles.poweredBy}>Historia · historia.app</span>
           </div>
         </div>
 

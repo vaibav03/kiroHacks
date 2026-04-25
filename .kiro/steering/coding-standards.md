@@ -2,7 +2,7 @@
 inclusion: auto
 ---
 
-# Study Sanctum Coding Standards
+# Historia Coding Standards
 
 ## API Routes
 - All API routes must validate input and return 400 for missing fields

@@ -1,8 +1,8 @@
 import ComicViewer from '@/components/ComicViewer';
 
 export const metadata = {
-  title: 'COMIC VAULT | STUDY SANCTUM',
-  description: 'Browse the Study Sanctum comic pages',
+  title: 'COMIC VAULT | HISTORIA',
+  description: 'Browse the Historia comic pages',
 };
 
 export default function ComicsPage() {

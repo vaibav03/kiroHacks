@@ -17,7 +17,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
                 letterSpacing: '0.2em',
                 textShadow: '3px 3px 0 #000',
               }}>
-                STUDY SANCTUM
+                HISTORIA
               </h1>
               <p style={{
                 fontSize: '0.7rem',

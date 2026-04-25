@@ -1,4 +1,4 @@
-# Implementation Plan — HistorAI Tutor App
+# Implementation Plan — Historia Tutor App
 
 ---
 
@@ -34,7 +34,7 @@
 ## Project Folder Structure
 
 ```
-historai-tutor-app/
+historia-tutor-app/
 ├── app/                          # Next.js App Router
 │   ├── layout.tsx                # Root layout, fonts, global CSS
 │   ├── page.tsx                  # Home page (hero + domain cards)

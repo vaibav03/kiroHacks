@@ -2,13 +2,13 @@
 
 ## Introduction
 
-HistorAI Tutor App is a single-user hackathon web application that lets students learn from AI-powered historical tutors. The user selects a domain from four hardcoded options; a corresponding historical figure then tutors them in first person with citations drawn from a pre-built knowledge base. The user may interact via text or voice, optionally upload a PDF chapter for the tutor to explain, and after PDF validation, navigate to teammate-built Comic and Game apps via redirect. This document covers App 1: Home, Tutor, and AI Backend.
+Historia Tutor App is a single-user hackathon web application that lets students learn from AI-powered historical tutors. The user selects a domain from four hardcoded options; a corresponding historical figure then tutors them in first person with citations drawn from a pre-built knowledge base. The user may interact via text or voice, optionally upload a PDF chapter for the tutor to explain, and after PDF validation, navigate to teammate-built Comic and Game apps via redirect. This document covers App 1: Home, Tutor, and AI Backend.
 
 ---
 
 ## Glossary
 
-- **App**: The HistorAI Tutor Next.js application (App 1).
+- **App**: The Historia Tutor Next.js application (App 1).
 - **Tutor**: An AI persona representing a historical figure, constrained to a specific domain.
 - **Domain**: One of four hardcoded subject areas paired with a historical figure.
 - **RAG_Pipeline**: The Retrieval-Augmented Generation pipeline that retrieves knowledge-base chunks and generates tutor responses via Claude.
@@ -132,7 +132,7 @@ HistorAI Tutor App is a single-user hackathon web application that lets students
 
 ### Requirement 8: Navigation and Teammate Handoff
 
-**User Story:** As a student, I want to navigate to the Comic and Game apps after validating my PDF, so that I can continue my learning experience across the full HistorAI suite.
+**User Story:** As a student, I want to navigate to the Comic and Game apps after validating my PDF, so that I can continue my learning experience across the full Historia suite.
 
 #### Acceptance Criteria
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 import chromadb
 from typing import List, Dict, Any
 
-app = FastAPI(title="HistorAI Chroma Sidecar")
+app = FastAPI(title="Historia Chroma Sidecar")
 
 # Initialize Chroma client
 CHROMA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "chroma")

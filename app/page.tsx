@@ -13,7 +13,7 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center w-full">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl text-white mb-8 leading-tight tracking-widest" style={{ textShadow: '4px 4px 0 #000' }}>
-            STUDY SANCTUM
+            HISTORIA
           </h1>
           <p className="text-sm text-gray-400 max-w-2xl mx-auto leading-loose uppercase">
             MEET YOUR AI ASSISTANT.<br/><br/>SELECT A MISSION OR REVIEW YOUR PROGRESS.

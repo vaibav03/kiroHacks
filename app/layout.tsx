@@ -19,7 +19,7 @@ const bangersFont = Bangers({
 });
 
 export const metadata: Metadata = {
-  title: "STUDY SANCTUM",
+  title: "HISTORIA",
   description: "Select your mission",
 };
 

@@ -295,7 +295,7 @@ export function GameModule({
   const downSlots = slots.filter(s => s.dir === 'd');
 
   return (
-    <section id="game" className={styles.root} aria-label="HistorAI Game Module">
+    <section id="game" className={styles.root} aria-label="Historia Game Module">
       {/* Header */}
       <header className={styles.hdr}>
         <div>
@@ -498,7 +498,7 @@ export function GameModule({
               <div className={styles.coverFoot}>
                 <span className={styles.coverBy}>Written &amp; Solved by</span>
                 <span className={styles.coverName}>{studentName}</span>
-                <span className={styles.coverPw}>HistorAI · historai.app</span>
+                <span className={styles.coverPw}>Historia · historia.app</span>
               </div>
             </div>
             <div className={styles.modalActions}>

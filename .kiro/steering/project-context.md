@@ -2,7 +2,7 @@
 inclusion: auto
 ---
 
-# Study Sanctum — Project Context
+# Historia — Project Context
 
 ## What This App Does
 An AI tutoring app where students pick a historical figure (Einstein, Lincoln, Mozart, Shakespeare) and chat with them. The tutor responds in-character using RAG over a pre-built knowledge base, with voice input/output and PDF upload for domain validation.
