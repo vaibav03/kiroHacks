@@ -1,0 +1,117 @@
+.panel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 3px solid #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 3px 3px 0 #000;
+  transition: filter 0.5s ease, opacity 0.5s ease;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Tier 1 — sketch: desaturated */
+.sketch {
+  filter: grayscale(0.8) contrast(1.1);
+}
+
+/* Tier 2 — inked: full color */
+.inked {
+  filter: none;
+}
+
+/* Tier 3 — dialogue: slight glow */
+.dialogue {
+  filter: none;
+  box-shadow: 3px 3px 0 #000, 0 0 12px #6B273766;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Locked state */
+.locked {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: repeating-linear-gradient(
+    45deg,
+    #1a1a1a,
+    #1a1a1a 4px,
+    #222 4px,
+    #222 8px
+  );
+}
+
+.lockIcon {
+  font-size: 1.8rem;
+  opacity: 0.5;
+}
+
+.lockLabel {
+  font-family: 'Bangers', cursive;
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+  letter-spacing: 0.05em;
+  padding: 0 0.5rem;
+}
+
+/* Dialogue bubbles */
+.bubble {
+  position: absolute;
+  font-family: 'Bangers', 'Luckiest Guy', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  max-width: 60%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.speech {
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  border-radius: 12px;
+}
+
+.speech::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 12px;
+  border: 6px solid transparent;
+  border-top-color: #111;
+}
+
+.caption {
+  background: #ffe066;
+  color: #111;
+  border: 2px solid #111;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.sfx {
+  background: transparent;
+  color: #ff3b3b;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000;
+  border: none;
+  padding: 0;
+}

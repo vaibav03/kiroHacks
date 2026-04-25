@@ -1,0 +1,36 @@
+.tile {
+  font-family: 'Bangers', 'Luckiest Guy', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #f5f0e8;
+  background: #2a2a2a;
+  border: 2px solid #444;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  min-width: 2rem;
+  cursor: grab;
+  transition: background 0.12s, transform 0.1s, box-shadow 0.1s;
+  user-select: none;
+  touch-action: none;
+}
+
+.tile:hover {
+  background: #3d3d3d;
+  box-shadow: 0 2px 6px #00000066;
+}
+
+.tile:active {
+  cursor: grabbing;
+}
+
+.selected {
+  background: #6B2737;
+  border-color: #9b3a50;
+  color: #fff;
+  box-shadow: 0 0 0 2px #6B273766;
+}
+
+.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}

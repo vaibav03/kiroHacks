@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  gap: 0;
+  border: 4px solid #1a1a1a;
+  box-shadow: 4px 4px 0 #000;
+  background: #1a1a1a;
+  /* Ben-Day dot texture */
+  background-image: radial-gradient(circle, #333 1px, transparent 1px);
+  background-size: 6px 6px;
+  background-color: #1a1a1a;
+  width: 100%;
+  max-width: 480px;
+}

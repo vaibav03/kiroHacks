@@ -1,0 +1,26 @@
+.area {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.gridWrapper {
+  flex: 0 0 auto;
+}
+
+.clueWrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .area {
+    flex-direction: column;
+  }
+
+  .gridWrapper {
+    width: 100%;
+  }
+}
