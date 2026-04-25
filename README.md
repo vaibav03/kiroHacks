@@ -4,7 +4,7 @@
 > **Frame: Education — The "Agency" Guardrail**
 > **Signals: Build 🔧 | Collaboration 🤝 | Impact 🌍**
 
-[![Demo Video](youtube.com/watch?v=UWSEsIgome8&feature=youtu.be)](YOUR_YOUTUBE_VIDEO_URL_HERE)
+[![Demo Video](https://img.shields.io/badge/▶_Demo_Video-YouTube-red?style=for-the-badge&logo=youtube)](https://youtube.com/watch?v=UWSEsIgome8&feature=youtu.be)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 ---
@@ -135,7 +135,7 @@ NEXT_PUBLIC_COGNITO_CLIENT_ID=your_client_id
 
 ## 📹 Demo Video
 
-[![Historia Demo](https://img.shields.io/badge/▶_Watch_Demo-YouTube-red?style=for-the-badge&logo=youtube)](YOUR_YOUTUBE_VIDEO_URL_HERE)
+[![Historia Demo](https://img.shields.io/badge/▶_Watch_Demo-YouTube-red?style=for-the-badge&logo=youtube)](https://youtube.com/watch?v=UWSEsIgome8&feature=youtu.be)
 
 ---
 
