@@ -15,14 +15,14 @@ export default function Nav() {
       <div className="flex items-center gap-4">
         {pdfValidated ? (
           <>
-            <a href={`${process.env.NEXT_PUBLIC_COMIC_APP_URL || '#' }?domain=${domain}`} 
+            <Link href={`/comic?domain=${domain}`} 
                className="retro-btn px-4 py-2 text-xs">
               COMIC VAULT
-            </a>
-            <a href={`${process.env.NEXT_PUBLIC_GAME_APP_URL || '#' }?domain=${domain}`} 
+            </Link>
+            <Link href={`/game?domain=${domain}`} 
                className="retro-btn px-4 py-2 text-xs">
               PUZZLE GAME
-            </a>
+            </Link>
           </>
         ) : (
           <>

@@ -1,0 +1,101 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+  background: #1a1a1a;
+  border: 3px solid #333;
+  border-radius: 4px;
+  max-height: 480px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #1a1a1a;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.heading {
+  font-family: 'Bangers', 'Luckiest Guy', cursive;
+  font-size: 1rem;
+  color: #f5f0e8;
+  letter-spacing: 0.08em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.4rem;
+}
+
+.subLabel {
+  font-size: 0.65rem;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+.inkDrop {
+  font-size: 0.85rem;
+}
+
+.clueList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.clueItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 0.35rem 0.5rem;
+  border-left: 3px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.clueItem:hover {
+  background: #2a2a2a;
+}
+
+.active {
+  background: #2a2a2a;
+  color: #f5f0e8;
+}
+
+.solved {
+  color: #5a9e6f;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.clueNum {
+  font-family: 'Bangers', cursive;
+  font-size: 0.85rem;
+  color: #888;
+  min-width: 1.2rem;
+  flex-shrink: 0;
+}
+
+.clueText {
+  flex: 1;
+}
+
+.checkmark {
+  color: #5a9e6f;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-// @ts-ignore
-import pdfParse from 'pdf-parse';
+import { extractText } from 'unpdf';
 import { BedrockRuntimeClient, ConverseCommand } from '@aws-sdk/client-bedrock-runtime';
 import { TUTORS } from '@/lib/tutors';
 
@@ -23,10 +22,8 @@ export async function POST(req: Request) {
     }
 
     const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    const pdfData = await pdfParse(buffer);
-    const pdfText = pdfData.text.substring(0, 5000);
+    const pdfData = await extractText(new Uint8Array(arrayBuffer));
+    const pdfText = pdfData.text.join('\n').substring(0, 5000);
 
     const domainTitle = Object.values(TUTORS).find(t => t.domain === domainStr)?.domainTitle || domainStr;
 
