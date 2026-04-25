@@ -4,7 +4,7 @@
 > **Frame: Education — The "Agency" Guardrail**
 > **Signals: Build 🔧 | Collaboration 🤝 | Impact 🌍**
 
-[![Demo Video](https://img.shields.io/badge/▶_Demo_Video-YouTube-red?style=for-the-badge&logo=youtube)](youtube.com/watch?v=UWSEsIgome8&feature=youtu.be)
+[![Demo Video](youtube.com/watch?v=UWSEsIgome8&feature=youtu.be)](YOUR_YOUTUBE_VIDEO_URL_HERE)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 ---
