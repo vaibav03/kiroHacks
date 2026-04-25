@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "API Route Review",
+  "description": "Reviews API route changes to ensure proper error handling, input validation, and response format consistency",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "app/api/**/*.ts"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review this API route change. Check for: 1) Missing input validation (400 errors), 2) Missing try/catch with proper error responses, 3) Consistent JSON response format, 4) Any hardcoded secrets or credentials. Report issues only — no praise."
+  }
+}

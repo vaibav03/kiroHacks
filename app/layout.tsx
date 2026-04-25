@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, Bangers } from "next/font/google";
 import "./globals.css";
+import AmplifyProvider from "@/components/AmplifyProvider";
+import AuthGate from "@/components/AuthGate";
 import { AppProvider } from "@/context/AppContext";
 import Nav from "@/components/Nav";
 
@@ -29,12 +31,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pixelFont.variable} ${bangersFont.variable} antialiased`}>
-        <AppProvider>
-          <Nav />
-          <main className="min-h-screen pt-24 pb-10 px-4 max-w-6xl mx-auto">
-            {children}
-          </main>
-        </AppProvider>
+        <AmplifyProvider>
+          <AuthGate>
+            <AppProvider>
+              <Nav />
+              <main className="min-h-screen pt-24 pb-10 px-4 max-w-6xl mx-auto">
+                {children}
+              </main>
+            </AppProvider>
+          </AuthGate>
+        </AmplifyProvider>
       </body>
     </html>
   );

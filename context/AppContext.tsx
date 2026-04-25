@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { TutorId, Domain } from '@/lib/tutors';
 
 interface AppState {
@@ -20,17 +20,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [tutorId, setTutorId] = useState<TutorId | null>(null);
   const [pdfValidated, setPdfValidated] = useState<boolean>(false);
 
-  useEffect(() => {
-    const savedSession = sessionStorage.getItem('historai_session');
-    if (savedSession) {
-      const parsed = JSON.parse(savedSession);
-      setSessionId(parsed.sessionId);
-      setDomain(parsed.domain);
-      setTutorId(parsed.tutorId);
-      setPdfValidated(parsed.pdfValidated);
-    }
-  }, []);
-
   const setSession = (newDomain: Domain, newTutorId: TutorId) => {
     const id = crypto.randomUUID();
     setSessionId(id);
@@ -39,7 +28,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setPdfValidated(false);
 
     const sessionData = { sessionId: id, domain: newDomain, tutorId: newTutorId, pdfValidated: false };
-    sessionStorage.setItem('historai_session', JSON.stringify(sessionData));
     
     fetch(`/api/session/${id}`, {
       method: 'POST',
@@ -51,7 +39,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setPdfValidated(val);
     if (sessionId) {
       const sessionData = { sessionId, domain, tutorId, pdfValidated: val };
-      sessionStorage.setItem('historai_session', JSON.stringify(sessionData));
       
       fetch(`/api/session/${sessionId}`, {
         method: 'POST',

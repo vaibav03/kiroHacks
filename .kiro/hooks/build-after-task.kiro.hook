@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Build Check After Task",
+  "description": "Runs the Next.js build after completing a spec task to verify nothing is broken",
+  "version": "1",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "npx next build 2>&1 | tail -20"
+  }
+}

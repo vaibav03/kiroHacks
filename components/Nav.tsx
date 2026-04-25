@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { signOut } from 'aws-amplify/auth';
 import { useAppContext } from '@/context/AppContext';
 
 export default function Nav() {
@@ -30,6 +31,12 @@ export default function Nav() {
             <span className="retro-btn px-4 py-2 text-xs opacity-50 cursor-not-allowed !bg-gray-500" title="Upload a PDF to unlock">PUZZLE GAME</span>
           </>
         )}
+        <button
+          onClick={() => signOut()}
+          className="retro-btn px-4 py-2 text-xs !bg-red-800 !text-white hover:!bg-red-700"
+        >
+          SIGN OUT
+        </button>
       </div>
     </nav>
   );

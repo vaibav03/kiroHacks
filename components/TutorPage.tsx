@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useAppContext } from '@/context/AppContext';
 import { TUTORS } from '@/lib/tutors';
 import EinsteinAvatar from './avatars/EinsteinAvatar';
@@ -16,6 +16,11 @@ export default function TutorPage() {
   const [audioBuffer, setAudioBuffer] = useState<Uint8Array | null>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [amplitude, setAmplitude] = useState(0);
+
+  useEffect(() => {
+    setAudioBuffer(null);
+    setIsSpeaking(false);
+  }, [tutorId]);
 
   if (!tutorId) return null;
   const tutorConfig = TUTORS[tutorId];
@@ -47,6 +52,10 @@ export default function TutorPage() {
     }
   };
 
+  const handlePlaybackStart = useCallback(() => setIsSpeaking(true), []);
+  const handlePlaybackEnd = useCallback(() => { setIsSpeaking(false); setAudioBuffer(null); }, []);
+  const handleAmplitudeUpdate = useCallback((val: number) => setAmplitude(val), []);
+
   const stopAudio = () => {
     setAudioBuffer(null);
     setIsSpeaking(false);
@@ -54,7 +63,6 @@ export default function TutorPage() {
 
   return (
     <div className="flex flex-col lg:flex-row h-auto lg:h-[80vh] gap-8 w-full">
-      {/* Left Column: Avatar (Top) and Chat (Bottom) */}
       <div className="w-full lg:w-[45%] flex flex-col gap-6 h-[80vh] lg:h-full">
         <div className="flex gap-4 h-[40%]">
           <div className="w-1/2 flex items-center justify-center">
@@ -71,22 +79,24 @@ export default function TutorPage() {
           </div>
         </div>
 
-        {/* Chat Panel at the bottom left */}
         <div className="flex-grow h-[60%] overflow-hidden">
-          <ChatPanel onTTSFetch={fetchTTS} isSpeaking={isSpeaking} onStopAudio={stopAudio} />
+          <ChatPanel
+            onTTSFetch={fetchTTS}
+            isSpeaking={isSpeaking}
+            onStopAudio={stopAudio}
+          />
         </div>
       </div>
 
-      {/* Right Column: Timeline / Facts */}
       <div className="w-full lg:w-[55%] h-[80vh] lg:h-full">
         <FactsPanel />
       </div>
 
       <AudioPlayer 
         audioBuffer={audioBuffer} 
-        onPlaybackStart={() => setIsSpeaking(true)} 
-        onPlaybackEnd={() => { setIsSpeaking(false); setAudioBuffer(null); }}
-        onAmplitudeUpdate={setAmplitude}
+        onPlaybackStart={handlePlaybackStart} 
+        onPlaybackEnd={handlePlaybackEnd}
+        onAmplitudeUpdate={handleAmplitudeUpdate}
       />
     </div>
   );
