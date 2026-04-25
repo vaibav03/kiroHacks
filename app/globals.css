@@ -3,25 +3,114 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #11111a;
+  --foreground: #e0e0e0;
+  --panel-bg: #1a1a2e;
+  --panel-border: #4a4a6a;
+  --btn-yellow: #fcd34d;
+  --btn-yellow-hover: #fbbf24;
+  --btn-yellow-text: #111111;
 }
 
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pixel), sans-serif;
+  /* Adds a subtle CRT scanline effect */
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* UI Elements */
+.retro-panel {
+  background-color: var(--panel-bg);
+  border: 4px solid var(--panel-border);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.retro-btn {
+  background-color: var(--btn-yellow);
+  color: var(--btn-yellow-text);
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.1s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.retro-btn:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+  background-color: var(--btn-yellow-hover);
+}
+
+.retro-btn:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 #000;
+}
+
+.retro-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Avatar Talking Animation */
+.avatar-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  border: 8px solid #4a4a6a;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+  background: #000;
+  animation: idle-bob 6s ease-in-out infinite;
+}
+
+@keyframes idle-bob {
+  0%, 100% { transform: scale(1) rotate(-1deg); }
+  50% { transform: scale(1.02) rotate(1deg); }
+}
+
+.avatar-container.excited {
+  animation: excited-shake 0.2s ease-in-out infinite !important;
+}
+
+@keyframes excited-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(2px, -2px) rotate(1deg); }
+  50% { transform: translate(-2px, 2px) rotate(-1deg); }
+  75% { transform: translate(-2px, -2px) rotate(0deg); }
+}
+
+.avatar-base {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.avatar-jaw {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0% 65%, 100% 65%, 100% 100%, 0% 100%);
+  transition: transform 0.05s ease-out;
+}
+
+.speaking .avatar-jaw {
+  transform: translateY(6px);
+}
+
+/* Pixel border utilities */
+.border-pixel {
+  border: 4px solid #000;
+  box-shadow: inset -4px -4px 0px 0px rgba(0,0,0,0.3);
 }
