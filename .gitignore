@@ -42,3 +42,4 @@ __pycache__/
 
 # databases
 chroma_db/
+.vscode/
