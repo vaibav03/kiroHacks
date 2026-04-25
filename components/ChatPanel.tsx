@@ -89,8 +89,11 @@ export default function ChatPanel({
         citations: data.citations
       }]);
 
-      // Strip out stage directions (e.g., *coughs*) before sending to TTS
-      const textForTTS = data.message.replace(/\*[^*]+\*/g, '').trim();
+      // Strip out stage directions (e.g., *coughs*) and citations before sending to TTS
+      const textForTTS = data.message
+        .replace(/\*[^*]+\*/g, '')
+        .replace(/\[Citation \d+\]/gi, '')
+        .trim();
       onTTSFetch(textForTTS);
 
     } catch (err: any) {
